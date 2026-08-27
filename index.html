@@ -128,18 +128,18 @@
     .hero-visual {
       position: absolute;
       left: 50%;
-      top: 32%;
+      top: 40%;
       transform: translateX(-50%);
-      width: 280px;
-      height: 380px;
+      width: 300px;
+      height: 280px;
       z-index: 1;
     }
 
     .hero-mockup {
       position: absolute;
-      right: -10px;
+      right: 0;
       top: 0;
-      width: 180px;
+      width: 155px;
       opacity: 0;
       transform: translateY(50px) scaleX(0) scaleY(0);
       transform-origin: center center;
@@ -147,15 +147,15 @@
 
     .hero-mockup img {
       width: 100%;
-      border-radius: 28px;
-      box-shadow: 0 24px 60px rgba(0,0,0,0.18);
+      border-radius: 20px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.16);
     }
 
     .hero-3d {
       position: absolute;
       left: 10px;
-      top: 60px;
-      width: 110px;
+      top: 70px;
+      width: 96px;
       opacity: 0;
       transform: translate(-25px, -20px) scale(0);
       transform-origin: center center;
@@ -165,12 +165,12 @@
 
     .hero-monimo {
       position: absolute;
-      right: 10px;
-      bottom: 30px;
-      width: 88px;
-      height: 88px;
+      right: 16px;
+      bottom: 0;
+      width: 76px;
+      height: 76px;
       background: white;
-      border-radius: 24px;
+      border-radius: 18px;
       border: 1px solid var(--gray-50);
       overflow: hidden;
       display: flex;
@@ -182,7 +182,7 @@
       box-shadow: 0 8px 24px rgba(0,0,0,0.10);
     }
 
-    .hero-monimo img { width: 60px; height: 60px; object-fit: contain; }
+    .hero-monimo img { width: 56px; height: 56px; object-fit: contain; }
 
     /* Animate on load */
     @keyframes slideUpFadeIn {
@@ -669,13 +669,13 @@
 
     <div class="hero-visual">
       <div class="hero-mockup">
-        <img src="https://www.figma.com/api/mcp/asset/dd5130c1-2093-4eb7-809b-0d6e4dc93b22.png" alt="핸드오더 결제 화면" />
+        <img src="mockup.png" alt="핸드오더 결제 화면" />
       </div>
       <div class="hero-3d">
-        <img src="https://www.figma.com/api/mcp/asset/269c2c10-4fdd-492d-8d22-dabc425c49d2.png" alt="" />
+        <img src="3D.png" alt="" />
       </div>
       <div class="hero-monimo">
-        <img src="https://www.figma.com/api/mcp/asset/4d4450b1-7539-4570-b2a3-b781395982be.png" alt="모니모" />
+        <img src="monimo.png" alt="모니모" />
       </div>
     </div>
   </section>
