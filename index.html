@@ -18,6 +18,7 @@
       --gray-700: #4f5663;
       --gray-600: #666e80;
       --gray-500: #6c839b;
+      --gray-400: #9ba2b0;
       --gray-100: #e5e7eb;
       --gray-50: #f4f4f6;
       --bg-gray: #f5f7fa;
@@ -38,22 +39,23 @@
       overflow-x: hidden;
     }
 
-    /* ── SECTION 0: HERO ── */
+    /* ── HERO GIF ── */
+    .hero-gif {
+      width: 100%;
+      display: block;
+      line-height: 0;
+    }
+    .hero-gif img {
+      width: 100%;
+      display: block;
+    }
+
+    /* ── HERO ── */
     .hero {
       position: relative;
       height: 812px;
       overflow: hidden;
-      background: linear-gradient(159.9deg, #e0f4ff 13.57%, #fff3e4 66.89%, #f8fffD 90.34%);
-    }
-
-    .hero-grain {
-      position: absolute;
-      inset: 0;
-      background-image: url('https://www.figma.com/api/mcp/asset/32f8f2ee-de8e-428d-bd8d-2284979bb45c.png');
-      background-size: 180px 180px;
-      opacity: 0.06;
-      mix-blend-mode: overlay;
-      pointer-events: none;
+      background: linear-gradient(159.9deg, #e0f4ff 13.57%, #fff3e4 66.89%, #f8fffd 90.34%);
     }
 
     .hero-orb-tl {
@@ -95,118 +97,61 @@
       letter-spacing: -0.375px;
       line-height: 1.4;
     }
+    .hero-eyebrow span { font-weight: 400; color: var(--gray-700); }
 
-    .hero-eyebrow span {
-      font-weight: 400;
-      color: var(--gray-700);
-    }
-
-    .hero-title-wrap {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .hero-title {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--gray-900);
+      letter-spacing: -0.7px;
+      line-height: 1.4;
       padding: 10px;
       position: relative;
     }
 
-    .hero-title {
-      font-size: 30px;
-      font-weight: 700;
-      color: var(--gray-900);
-      letter-spacing: -0.75px;
-      line-height: 1.4;
+    .hero-title .chidae {
+      position: absolute;
+      bottom: 52px;
+      left: 30px;
+      font-size: 12px;
+      font-weight: 400;
+      color: var(--gray-600);
+      letter-spacing: -0.3px;
     }
 
     .hero-date {
       font-size: 18px;
       font-weight: 400;
       color: var(--gray-800);
-      letter-spacing: 0;
     }
 
-    /* Hero visual — single image */
+    /* Hero visual */
     .hero-visual {
       position: absolute;
-      bottom: 0;
-      left: 0;
-      transform: none;
-      width: 100%;
-      max-width: 430px;
+      bottom: -40px;
+      left: -10px;
+      width: 395px;
       z-index: 1;
       animation: slideUpFadeIn 1.0s cubic-bezier(0.22, 1, 0.36, 1) forwards;
     }
 
-    .hero-visual img {
-      width: 100%;
-      display: block;
-    }
+    .hero-visual img { width: 100%; display: block; }
 
-    .hero-mockup, .hero-3d, .hero-monimo { display: none; }
-
-    /* Animate on load */
     @keyframes slideUpFadeIn {
-      0% { opacity: 0; transform: translateY(445px); }
-      6% { transform: translateY(-10px); }
-      9% { transform: translateY(0); opacity: 1; }
-      100% { transform: translateY(0); opacity: 1; }
-    }
-
-    @keyframes mockupReveal {
-      0%, 8% { opacity: 0; transform: translateY(50px) scale(0); }
-      20% { opacity: 1; transform: translateY(0) scale(1); }
-      100% { opacity: 1; transform: translateY(0) scale(1); }
-    }
-
-    @keyframes threeDReveal {
-      0%, 14% { opacity: 0; transform: translate(-25px, -20px) scale(0); }
-      28% { opacity: 1; transform: translate(0, 0) scale(1); }
-      100% { opacity: 1; transform: translate(0, 0) scale(1); }
-    }
-
-    @keyframes monimoReveal {
-      0%, 20% { opacity: 0; transform: translate(15px, 25px) scale(0); }
-      36% { opacity: 1; transform: translate(0, 0) scale(1); }
-      100% { opacity: 1; transform: translate(0, 0) scale(1); }
-    }
-
-    @keyframes floatY {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
-    }
-
-    .hero-visual {
-      animation: slideUpFadeIn 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-    }
-
-    .hero-mockup {
-      animation: mockupReveal 1.8s cubic-bezier(0.22, 1, 0.36, 1) 0.1s forwards,
-                 floatY 4s ease-in-out 2s infinite;
-    }
-
-    .hero-3d {
-      animation: threeDReveal 1.8s cubic-bezier(0.22, 1, 0.36, 1) 0.3s forwards;
-    }
-
-    .hero-monimo {
-      animation: monimoReveal 1.8s cubic-bezier(0.22, 1, 0.36, 1) 0.5s forwards,
-                 floatY 4.5s ease-in-out 2.5s infinite;
+      0% { opacity: 0; transform: translateY(60px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .hero-visual, .hero-mockup, .hero-3d, .hero-monimo {
-        animation: none;
-        opacity: 1;
-        transform: none;
-      }
+      .hero-visual { animation: none; opacity: 1; transform: none; }
     }
 
-    /* ── SECTION 1: 이벤트 안내 ── */
+    /* ── SECTIONS ── */
     .section {
       padding: 60px 24px;
       position: relative;
       overflow: hidden;
     }
-
     .section--gray { background: var(--bg-gray); }
     .section--white { background: var(--white); }
 
@@ -251,17 +196,23 @@
       line-height: 1.4;
     }
 
-    /* Info table */
-    .info-table {
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
+    /* monimo deco */
+    .monimo-deco {
+      position: absolute;
+      left: -92px; top: 50%;
+      transform: translateY(-50%) rotate(15deg);
+      width: 197px;
+      opacity: 0.5;
+      filter: blur(0.5px);
+      pointer-events: none;
     }
+
+    /* Info table */
+    .info-table { display: flex; flex-direction: column; gap: 30px; }
 
     .info-row {
       display: flex;
       align-items: flex-start;
-      gap: 0;
       font-size: 15px;
       line-height: 1.4;
       letter-spacing: -0.375px;
@@ -270,26 +221,14 @@
     .info-label {
       font-weight: 700;
       color: var(--black);
-      width: 82px;
+      width: 68px;
       flex-shrink: 0;
     }
 
-    .info-value {
-      font-weight: 500;
-      color: var(--gray-800);
-    }
+    .info-value { font-weight: 500; color: var(--gray-800); }
 
-    .benefit-group {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    .benefit-item {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
+    .benefit-group { display: flex; flex-direction: column; gap: 20px; }
+    .benefit-item { display: flex; flex-direction: column; gap: 8px; }
 
     .category-badge {
       display: inline-flex;
@@ -301,46 +240,24 @@
       font-weight: 700;
       padding: 5px 10px;
       border-radius: 999px;
-      letter-spacing: -0.2px;
       width: fit-content;
     }
 
-    .benefit-text {
-      font-size: 15px;
-      font-weight: 500;
-      color: var(--gray-800);
-      letter-spacing: -0.375px;
-      padding-left: 2px;
-    }
-
+    .benefit-text { font-size: 15px; font-weight: 500; color: var(--gray-800); letter-spacing: -0.375px; padding-left: 2px; }
     .benefit-text strong { font-weight: 700; }
 
-    /* Monimo card deco */
-    .monimo-deco {
-      position: absolute;
-      left: -92px;
-      top: 50%;
-      transform: translateY(-50%) rotate(15deg);
-      width: 197px;
-      opacity: 0.5;
-      filter: blur(0.5px);
-      pointer-events: none;
-    }
-
-    /* ── SECTION 2: 참여 방법 ── */
+    /* Steps */
     .steps-container {
       position: relative;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      gap: 0;
       height: 303px;
     }
 
     .steps-line {
       position: absolute;
-      left: 35.5px;
-      top: 0; bottom: 0;
+      left: 35.5px; top: 0; bottom: 0;
       width: 0.5px;
       background: var(--gray-100);
       z-index: 0;
@@ -367,47 +284,14 @@
 
     .step-icon img { width: 48px; height: 48px; object-fit: contain; }
 
-    .step-info {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
+    .step-info { display: flex; flex-direction: column; gap: 8px; }
+    .step-num { font-size: 11px; font-weight: 600; color: var(--blue-light); letter-spacing: -0.495px; }
+    .step-details { display: flex; flex-direction: column; gap: 6px; }
+    .step-title { font-size: 15px; font-weight: 700; color: var(--gray-900); letter-spacing: -0.375px; white-space: nowrap; }
+    .step-desc { font-size: 11px; font-weight: 400; color: #7f8899; letter-spacing: -0.495px; }
 
-    .step-num {
-      font-size: 11px;
-      font-weight: 600;
-      color: var(--blue-light);
-      letter-spacing: -0.495px;
-    }
-
-    .step-details {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-
-    .step-title {
-      font-size: 15px;
-      font-weight: 700;
-      color: var(--gray-900);
-      letter-spacing: -0.375px;
-      white-space: nowrap;
-    }
-
-    .step-desc {
-      font-size: 11px;
-      font-weight: 400;
-      color: var(--gray-600);
-      letter-spacing: -0.495px;
-    }
-
-    /* ── SECTION 3: 매장 목록 ── */
-    .store-section {
-      background: var(--white);
-      padding-top: 60px;
-      overflow: hidden;
-      position: relative;
-    }
+    /* Store section */
+    .store-section { background: var(--white); padding-top: 60px; overflow: hidden; position: relative; }
 
     .store-header {
       padding: 0 24px;
@@ -418,7 +302,6 @@
       margin-bottom: 60px;
     }
 
-    /* Tab bar */
     .tab-bar {
       display: flex;
       align-items: center;
@@ -442,64 +325,35 @@
       background: none;
       position: relative;
       transition: color 0.2s;
+      font-family: inherit;
     }
 
-    .tab-item.active {
-      font-weight: 600;
-      color: var(--gray-900);
-    }
+    .tab-item.active { font-weight: 600; color: var(--gray-900); }
 
     .tab-item.active::after {
       content: '';
       position: absolute;
-      bottom: -0.5px;
-      left: 0; right: 0;
+      bottom: -0.5px; left: 0; right: 0;
       height: 2.5px;
       background: var(--gray-900);
       border-radius: 2px 2px 0 0;
     }
 
-    /* Store list */
-    .store-list {
-      padding: 36px 16px 24px;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
+    .store-list { padding: 36px 16px 24px; display: flex; flex-direction: column; gap: 16px; }
     .store-tab-panel { display: none; }
     .store-tab-panel.active { display: flex; flex-direction: column; gap: 16px; }
 
-    .store-card {
-      display: flex;
-      gap: 16px;
-      align-items: flex-start;
-      overflow: hidden;
-    }
+    .store-card { display: flex; gap: 16px; align-items: flex-start; }
 
-    .store-map {
+    .store-thumb {
       width: 106px; height: 106px;
       border-radius: 8px;
       overflow: hidden;
       flex-shrink: 0;
       background: var(--gray-50);
-      position: relative;
     }
 
-    .store-map img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-    }
-
-    .store-map-placeholder {
-      width: 100%; height: 100%;
-      background: linear-gradient(135deg, #e8edf5 0%, #d0d8e8 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--gray-500);
-      font-size: 11px;
-    }
+    .store-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
     .store-info {
       flex: 1;
@@ -510,19 +364,9 @@
       padding: 4px 0;
     }
 
-    .store-name {
-      font-size: 18px;
-      font-weight: 600;
-      color: var(--gray-900);
-      letter-spacing: -0.45px;
-      line-height: 1.4;
-    }
+    .store-name { font-size: 18px; font-weight: 600; color: var(--gray-900); letter-spacing: -0.45px; line-height: 1.4; }
 
-    .store-address-row {
-      display: flex;
-      align-items: center;
-      gap: 2px;
-    }
+    .store-address-row { display: flex; align-items: center; gap: 2px; width: 100%; }
 
     .store-address {
       font-size: 16px;
@@ -537,105 +381,68 @@
       text-overflow: ellipsis;
     }
 
-    .store-chevron {
-      width: 22px; height: 22px;
-      flex-shrink: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--gray-500);
-    }
-
+    .store-chevron { width: 22px; height: 22px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; color: var(--gray-500); }
     .store-chevron svg { width: 16px; height: 16px; }
 
-    .divider {
-      height: 0.5px;
-      background: var(--gray-100);
-      width: 100%;
-    }
+    .divider { height: 0.5px; background: var(--gray-100); width: 100%; }
 
-    /* ── FOOTER: 유의사항 ── */
-    .footer {
-      background: var(--gray-50);
-      padding: 30px 24px 60px;
-    }
+    a.map-link { text-decoration: none; color: inherit; display: flex; align-items: center; gap: 2px; width: 100%; }
+    a.map-link:active .store-address { text-decoration: underline; color: var(--blue-500); }
 
-    .footer-inner {
-      max-width: 327px;
-      display: flex;
-      flex-direction: column;
-      gap: 22px;
-    }
+    /* Footer */
+    .footer { background: var(--gray-50); padding: 30px 24px 60px; }
+    .footer-inner { max-width: 327px; display: flex; flex-direction: column; gap: 22px; }
+    .footer-title { font-size: 15px; font-weight: 700; color: var(--gray-700); letter-spacing: -0.375px; line-height: 1.4; }
 
-    .footer-title {
-      font-size: 15px;
-      font-weight: 700;
-      color: var(--gray-700);
-      letter-spacing: -0.375px;
-      line-height: 1.4;
-    }
-
-    .notice-list {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .notice-item {
-      display: flex;
-      gap: 4px;
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--gray-500);
-      letter-spacing: -0.325px;
-      line-height: 1.4;
-    }
-
+    .notice-list { display: flex; flex-direction: column; gap: 8px; }
+    .notice-item { display: flex; gap: 4px; font-size: 13px; font-weight: 500; color: var(--gray-500); letter-spacing: -0.325px; line-height: 1.4; }
     .notice-item span:first-child { flex-shrink: 0; }
 
-    /* Naver map link styling */
-    a.map-link {
-      text-decoration: none;
-      color: inherit;
-      display: flex;
-      align-items: center;
-      gap: 2px;
-      width: 100%;
+    .legal-text {
+      font-size: 7px;
+      font-weight: 400;
+      color: var(--gray-400);
+      letter-spacing: -0.175px;
+      line-height: 1.4;
+      white-space: pre-wrap;
+      margin-top: 18px;
     }
 
-    a.map-link:hover .store-address {
-      text-decoration: underline;
-      color: var(--blue-500);
+    /* Step 3 icon */
+    .step-frame {
+      position: relative;
+      width: 43px; height: 61.6px;
+      background: white;
+      border: 1.162px solid var(--gray-400);
+      border-radius: 7px 7px 0 0;
+      overflow: hidden;
     }
+    .step-frame-bar {
+      position: absolute;
+      top: 3.84px; left: 50%; transform: translateX(-50%);
+      width: 11px; height: 3px;
+      background: #292929;
+      border-radius: 999px;
+    }
+    .step-frame-logo {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%) translateY(1.2px);
+      width: 28px; height: 6px;
+    }
+    .step-frame-logo img { width: 100%; height: 100%; object-fit: contain; }
   </style>
 </head>
 <body>
 <div class="page-wrapper">
 
   <!-- HERO -->
-  <section class="hero">
-    <div class="hero-grain"></div>
-    <div class="hero-orb-tl"></div>
-    <div class="hero-orb-br"></div>
-
-    <div class="hero-content">
-      <p class="hero-eyebrow">핸드오더 <span>×</span> 삼성 모니모</p>
-      <div class="hero-title-wrap">
-        <p class="hero-title">삼성카드 모니모 앱으로 결제하고<br>1만원 혜택 받으세요!</p>
-      </div>
-      <p class="hero-date">2026.9.9 - 9.11</p>
-    </div>
-
-    <div class="hero-visual">
-      <img src="visual.png" alt="핸드오더 모니모 결제 화면" />
-    </div>
+  <section class="hero-gif">
+    <img src="hero.gif" alt="핸드오더 × 삼성 모니모 이벤트" />
   </section>
 
   <!-- SECTION 1: 혜택 안내 -->
   <section class="section section--white">
-    <img class="monimo-deco"
-      src="https://www.figma.com/api/mcp/asset/b62f6e78-ee30-4abd-aadf-7560d7393b0b.png"
-      alt="" aria-hidden="true" />
     <div class="section-inner">
       <div class="section-header">
         <p class="eyebrow">혜택 안내</p>
@@ -653,7 +460,7 @@
         </div>
         <div class="info-row">
           <span class="info-label">결제 수단</span>
-          <span class="info-value">삼성 카드 (개인용)</span>
+          <span class="info-value">모니모 앱 내 삼성카드 (개인용)</span>
         </div>
         <div class="info-row">
           <span class="info-label">참여 조건</span>
@@ -664,11 +471,11 @@
           <div class="benefit-group">
             <div class="benefit-item">
               <span class="category-badge">카페</span>
-              <p class="benefit-text"><strong>5천원</strong> 이상 결제 시 → 5천원 리워드 지급</p>
+              <p class="benefit-text"><strong>5천원</strong> 이상 결제 시 → 배민 상품권 5천원 지급</p>
             </div>
             <div class="benefit-item">
               <span class="category-badge">음식점</span>
-              <p class="benefit-text"><strong>1만원</strong> 이상 결제 시 → 1만원 리워드 지급</p>
+              <p class="benefit-text"><strong>1만원</strong> 이상 결제 시 → 배민 상품권 1만원 지급</p>
             </div>
           </div>
         </div>
@@ -685,7 +492,7 @@
     <div class="section-inner">
       <div class="section-header">
         <p class="eyebrow">혜택 받는 방법</p>
-        <p class="section-title">자리에서 결제하고 혜택까지<br>챙길 수 있어요</p>
+        <p class="section-title">QR로 결제하고 혜택까지<br>챙길 수 있어요</p>
         <p class="section-sub">대상 매장에서 핸드오더 QR 오더로<br>주문 · 결제 시 자동 참여돼요.</p>
       </div>
 
@@ -694,7 +501,7 @@
 
         <div class="step-item">
           <div class="step-icon">
-            <img src="https://www.figma.com/api/mcp/asset/0c2c6b20-061c-4be9-a47c-bccb197c9333.svg" alt="매장" />
+            <img src="icon-01.svg" alt="매장" width="48" height="48" />
           </div>
           <div class="step-info">
             <p class="step-num">STEP 01</p>
@@ -707,7 +514,7 @@
 
         <div class="step-item">
           <div class="step-icon">
-            <img src="https://www.figma.com/api/mcp/asset/540bb2b6-834e-4b18-a3b4-7c451e531974.svg" alt="QR" />
+            <img src="icon-02.svg" alt="QR 주문" width="48" height="48" />
           </div>
           <div class="step-info">
             <p class="step-num">STEP 02</p>
@@ -720,14 +527,7 @@
 
         <div class="step-item">
           <div class="step-icon">
-            <!-- 결제 단말기 아이콘 -->
-            <svg width="32" height="36" viewBox="0 0 32 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="2" y="3" width="28" height="33" rx="3" stroke="#9ba2b0" stroke-width="1.5" fill="white"/>
-              <rect x="9" y="8" width="14" height="3" rx="1.5" fill="#292929"/>
-              <rect x="7" y="16" width="18" height="2" rx="1" fill="#e5e7eb"/>
-              <rect x="7" y="21" width="18" height="2" rx="1" fill="#e5e7eb"/>
-              <rect x="7" y="26" width="12" height="2" rx="1" fill="#e5e7eb"/>
-            </svg>
+            <img src="icon-03.svg" alt="모니모 결제" width="48" height="64" />
           </div>
           <div class="step-info">
             <p class="step-num">STEP 03</p>
@@ -758,50 +558,34 @@
       <!-- 음식점 -->
       <div id="tab-restaurant" class="store-tab-panel active">
         <div class="store-card">
-          <div class="store-map">
-            <img src="https://www.figma.com/api/mcp/asset/516b0f57-3d33-40ba-a71a-35af081a3b8c.png" alt="팍스 부대찌개 위치" />
-          </div>
+          <div class="store-thumb"><img src="img-02-paks.png" alt="팍스 부대찌개" /></div>
           <div class="store-info">
             <p class="store-name">팍스 부대찌개</p>
-            <a class="map-link" href="https://map.naver.com/v5/search/팍스 부대찌개 서울 성동구 상원12길 30 1층" target="_blank" rel="noopener">
+            <a class="map-link" href="https://map.naver.com/v5/search/팍스부대찌개 서울 성동구 상원12길 30" target="_blank" rel="noopener">
               <span class="store-address">서울 성동구 상원 12길 30 1층</span>
-              <span class="store-chevron">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
-              </span>
+              <span class="store-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></span>
             </a>
           </div>
         </div>
-
         <div class="divider"></div>
-
         <div class="store-card">
-          <div class="store-map">
-            <img src="https://www.figma.com/api/mcp/asset/19a0b79b-a90a-44ba-8a18-f36a109a2aa8.png" alt="시원 위치" />
-          </div>
+          <div class="store-thumb"><img src="img-03-seawon.png" alt="시원" /></div>
           <div class="store-info">
             <p class="store-name">시원</p>
             <a class="map-link" href="https://map.naver.com/v5/search/시원 서울 성동구 상원10길 7" target="_blank" rel="noopener">
               <span class="store-address">서울 성동구 상원10길 7</span>
-              <span class="store-chevron">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
-              </span>
+              <span class="store-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></span>
             </a>
           </div>
         </div>
-
         <div class="divider"></div>
-
         <div class="store-card">
-          <div class="store-map">
-            <div class="store-map-placeholder">지도</div>
-          </div>
+          <div class="store-thumb"><img src="img-04-oppadak.png" alt="오븐에 빠진닭" /></div>
           <div class="store-info">
             <p class="store-name">오븐에 빠진닭</p>
             <a class="map-link" href="https://map.naver.com/v5/search/오븐에빠진닭 서울 성동구 아차산로7길 8" target="_blank" rel="noopener">
               <span class="store-address">서울 성동구 아차산로7길 8, 2층</span>
-              <span class="store-chevron">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
-              </span>
+              <span class="store-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></span>
             </a>
           </div>
         </div>
@@ -810,50 +594,34 @@
       <!-- 카페 -->
       <div id="tab-cafe" class="store-tab-panel">
         <div class="store-card">
-          <div class="store-map">
-            <div class="store-map-placeholder">지도</div>
-          </div>
+          <div class="store-thumb"><img src="img-01-gradation.png" alt="그라데이션 성수" /></div>
           <div class="store-info">
             <p class="store-name">그라데이션 성수</p>
-            <a class="map-link" href="https://map.naver.com/v5/search/그라데이션 성수 서울 성동구 상원12길 24" target="_blank" rel="noopener">
+            <a class="map-link" href="https://map.naver.com/v5/search/그라데이션커피 서울 성동구 상원12길 24" target="_blank" rel="noopener">
               <span class="store-address">서울 성동구 상원12길 24 11층</span>
-              <span class="store-chevron">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
-              </span>
+              <span class="store-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></span>
             </a>
           </div>
         </div>
-
         <div class="divider"></div>
-
         <div class="store-card">
-          <div class="store-map">
-            <div class="store-map-placeholder">지도</div>
-          </div>
+          <div class="store-thumb"><img src="img-06-sol-hotel.png" alt="솔라리아 호텔 명동" /></div>
           <div class="store-info">
             <p class="store-name">솔라리아 호텔 명동</p>
-            <a class="map-link" href="https://map.naver.com/v5/search/솔라라아 호텔 명동 서울 중구 명동8길 27" target="_blank" rel="noopener">
+            <a class="map-link" href="https://map.naver.com/v5/search/솔라리아호텔명동 서울 중구 명동8길 27" target="_blank" rel="noopener">
               <span class="store-address">서울 중구 명동8길 27 엠 플라자</span>
-              <span class="store-chevron">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
-              </span>
+              <span class="store-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></span>
             </a>
           </div>
         </div>
-
         <div class="divider"></div>
-
         <div class="store-card">
-          <div class="store-map">
-            <div class="store-map-placeholder">지도</div>
-          </div>
+          <div class="store-thumb"><img src="img-05-korumo-hotel.png" alt="코루모리 코리아" /></div>
           <div class="store-info">
             <p class="store-name">코루모리 코리아</p>
-            <a class="map-link" href="https://map.naver.com/v5/search/코루모리 코리아 서울 중구 을지로 158" target="_blank" rel="noopener">
+            <a class="map-link" href="https://map.naver.com/v5/search/코루모리 서울 중구 을지로 158" target="_blank" rel="noopener">
               <span class="store-address">서울 중구 을지로 158 1층</span>
-              <span class="store-chevron">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
-              </span>
+              <span class="store-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></span>
             </a>
           </div>
         </div>
@@ -861,7 +629,7 @@
     </div>
   </section>
 
-  <!-- FOOTER: 유의사항 -->
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-inner">
       <p class="footer-title">유의사항</p>
@@ -870,9 +638,25 @@
         <div class="notice-item"><span>-</span><span>삼성카드 모니모 앱을 통한 결제에 한해 적용됩니다.</span></div>
         <div class="notice-item"><span>-</span><span>1인 1회 한정, 중복 참여가 불가합니다.</span></div>
         <div class="notice-item"><span>-</span><span>선착순 150명 달성 시 이벤트가 조기 종료될 수 있습니다.</span></div>
-        <div class="notice-item"><span>-</span><span>최소 결제 금액 5천원(카페 업종), 1만원(음식점) 미만 시 혜택이 적용되지 않습니다.</span></div>
+        <div class="notice-item"><span>-</span><span>최소 결제 금액 5천원(카페 업종), 1만원 (음식점) 미만 시 혜택이 적용되지 않습니다.</span></div>
         <div class="notice-item"><span>-</span><span>법인카드 및 기프트카드 결제는 제외됩니다.</span></div>
       </div>
+
+      <p class="legal-text">* 연체이자율 : 회원별/이용상품별 정상이자율 + 3%p(최고 연 20.0%)
+  ㆍ연체 발생 시점에 정상이자율이 없는 경우 아래와 같이 적용
+    ① 일시불 거래 연체 시 : 거래 발생 시점의 최소 기간(2개월) 유이자할부 이자율
+    ② 무이자할부 거래 연체 시 : 거래 발생 시점의 동일한 할부 계약기간 유이자할부 이자율
+    ③ 그 외의 경우 : 상법상 상사법정이율과 상호금융 가계자금대출금리 중 높은 이자율
+    (가계자금대출금리 : 한국은행 에서 매월 발표하는 가장 최근의 비은행 금융기관 가중평균대출금리(신규 대출 기준))
+* 금융상품 이용 전 상품설명서, 홈페이지, 약관을 통해 이용조건 확인
+* 금융소비자는 금융소비자보호법 제 19조 제1항에 따라 해당 상품 또는 서비스에 대하여 설명을 받을 권리가 있음
+* 신용카드 발급이 부적정한 경우(개인신용평점 낮음 등) 카드 발급이 제한될 수 있음
+* 카드 이용대금과 이에 수반되는 모든 수수료를 지정된 대금 결제일에 상환
+* 상환 능력에 비해 신용카드 사용액이 과도할 경우 귀하의 개인신용평점이 하락할 수 있음
+* 개인신용평점 하락 시 금융거래 관련된 불이익이 발생할 수 있음
+* 일정 기간 원리금을 연체할 경우, 모든 원리금을 변제할 의무가 발생할 수 있음
+
+준법심의필  I0000-00-0000 (0000.00.00 ~ 0000.00.00)</p>
     </div>
   </footer>
 
@@ -880,11 +664,8 @@
 
 <script>
   function switchTab(tab, el) {
-    // 탭 버튼 active 전환
     document.querySelectorAll('.tab-item').forEach(btn => btn.classList.remove('active'));
     el.classList.add('active');
-
-    // 패널 전환
     document.querySelectorAll('.store-tab-panel').forEach(panel => panel.classList.remove('active'));
     document.getElementById('tab-' + tab).classList.add('active');
   }
