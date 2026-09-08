@@ -40,118 +40,11 @@
     }
 
     /* ── HERO GIF ── */
-    .hero-gif {
-      width: 100%;
-      display: block;
-      line-height: 0;
-    }
-    .hero-gif img {
-      width: 100%;
-      display: block;
-    }
-
-    /* ── HERO ── */
-    .hero {
-      position: relative;
-      height: 812px;
-      overflow: hidden;
-      background: linear-gradient(159.9deg, #e0f4ff 13.57%, #fff3e4 66.89%, #f8fffd 90.34%);
-    }
-
-    .hero-orb-tl {
-      position: absolute;
-      width: 239px; height: 219px;
-      left: -75px; top: -66px;
-      background: radial-gradient(circle at 40% 40%, rgba(30,99,252,0.18), transparent 70%);
-      border-radius: 50%;
-      filter: blur(30px);
-    }
-
-    .hero-orb-br {
-      position: absolute;
-      width: 239px; height: 219px;
-      right: -86px; bottom: -96px;
-      background: radial-gradient(circle at 60% 60%, rgba(0,200,180,0.15), transparent 70%);
-      border-radius: 50%;
-      filter: blur(30px);
-    }
-
-    .hero-content {
-      position: absolute;
-      top: 80px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 327px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 24px;
-      text-align: center;
-      z-index: 2;
-    }
-
-    .hero-eyebrow {
-      font-size: 15px;
-      font-weight: 700;
-      color: var(--blue-500);
-      letter-spacing: -0.375px;
-      line-height: 1.4;
-    }
-    .hero-eyebrow span { font-weight: 400; color: var(--gray-700); }
-
-    .hero-title {
-      font-size: 28px;
-      font-weight: 700;
-      color: var(--gray-900);
-      letter-spacing: -0.7px;
-      line-height: 1.4;
-      padding: 10px;
-      position: relative;
-    }
-
-    .hero-title .chidae {
-      position: absolute;
-      bottom: 52px;
-      left: 30px;
-      font-size: 12px;
-      font-weight: 400;
-      color: var(--gray-600);
-      letter-spacing: -0.3px;
-    }
-
-    .hero-date {
-      font-size: 18px;
-      font-weight: 400;
-      color: var(--gray-800);
-    }
-
-    /* Hero visual */
-    .hero-visual {
-      position: absolute;
-      bottom: -40px;
-      left: -10px;
-      width: 395px;
-      z-index: 1;
-      animation: slideUpFadeIn 1.0s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-    }
-
-    .hero-visual img { width: 100%; display: block; }
-
-    @keyframes slideUpFadeIn {
-      0% { opacity: 0; transform: translateY(60px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .hero-visual { animation: none; opacity: 1; transform: none; }
-    }
+    .hero-gif { width: 100%; display: block; line-height: 0; }
+    .hero-gif img { width: 100%; display: block; }
 
     /* ── SECTIONS ── */
-    .section {
-      padding: 60px 24px;
-      position: relative;
-      overflow: hidden;
-    }
+    .section { padding: 60px 24px; position: relative; overflow: hidden; }
     .section--gray { background: var(--bg-gray); }
     .section--white { background: var(--white); }
 
@@ -196,17 +89,6 @@
       line-height: 1.4;
     }
 
-    /* monimo deco */
-    .monimo-deco {
-      position: absolute;
-      left: -92px; top: 50%;
-      transform: translateY(-50%) rotate(15deg);
-      width: 197px;
-      opacity: 0.5;
-      filter: blur(0.5px);
-      pointer-events: none;
-    }
-
     /* Info table */
     .info-table { display: flex; flex-direction: column; gap: 30px; }
 
@@ -226,6 +108,20 @@
     }
 
     .info-value { font-weight: 500; color: var(--gray-800); }
+
+    .info-sub {
+      font-size: 11px;
+      font-weight: 400;
+      color: var(--gray-400);
+      letter-spacing: -0.3px;
+      line-height: 1.4;
+      margin-top: 4px;
+    }
+
+    .info-value-group {
+      display: flex;
+      flex-direction: column;
+    }
 
     .benefit-group { display: flex; flex-direction: column; gap: 20px; }
     .benefit-item { display: flex; flex-direction: column; gap: 8px; }
@@ -403,34 +299,19 @@
       font-weight: 400;
       color: var(--gray-400);
       letter-spacing: -0.175px;
-      line-height: 1.4;
+      line-height: 1.5;
       white-space: pre-wrap;
       margin-top: 18px;
     }
 
-    /* Step 3 icon */
-    .step-frame {
-      position: relative;
-      width: 43px; height: 61.6px;
-      background: white;
-      border: 1.162px solid var(--gray-400);
-      border-radius: 7px 7px 0 0;
-      overflow: hidden;
+    .legal-junbup {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--gray-500);
+      letter-spacing: -0.325px;
+      line-height: 1.4;
+      margin-top: 12px;
     }
-    .step-frame-bar {
-      position: absolute;
-      top: 3.84px; left: 50%; transform: translateX(-50%);
-      width: 11px; height: 3px;
-      background: #292929;
-      border-radius: 999px;
-    }
-    .step-frame-logo {
-      position: absolute;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%) translateY(1.2px);
-      width: 28px; height: 6px;
-    }
-    .step-frame-logo img { width: 100%; height: 100%; object-fit: contain; }
   </style>
 </head>
 <body>
@@ -460,7 +341,10 @@
         </div>
         <div class="info-row">
           <span class="info-label">결제 수단</span>
-          <span class="info-value">모니모 앱 내 삼성카드 (개인용)</span>
+          <div class="info-value-group">
+            <span class="info-value">삼성 개인 신용카드</span>
+            <span class="info-sub">*법인/체크/선불/충전/기프트카드는 제외</span>
+          </div>
         </div>
         <div class="info-row">
           <span class="info-label">참여 조건</span>
@@ -578,6 +462,17 @@
             </a>
           </div>
         </div>
+        <div class="divider"></div>
+        <div class="store-card">
+          <div class="store-thumb"><img src="img-04-oppadak.png" alt="오븐에 빠진닭" /></div>
+          <div class="store-info">
+            <p class="store-name">오븐에 빠진닭</p>
+            <a class="map-link" href="https://map.naver.com/v5/search/오븐에빠진닭 서울 성동구 아차산로7길 8" target="_blank" rel="noopener">
+              <span class="store-address">서울 성동구 아차산로7길 8, 2층</span>
+              <span class="store-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></span>
+            </a>
+          </div>
+        </div>
       </div>
 
       <!-- 카페 -->
@@ -644,9 +539,8 @@
 <strong style="color:#7f8899">* 상환 능력에 비해 신용카드 사용액이 과도할 경우 귀하의 개인신용평점이 하락할 수 있음
 * 개인신용평점 하락 시 금융거래 관련된 불이익이 발생할 수 있음
 * 일정 기간 원리금을 연체할 경우, 모든 원리금을 변제할 의무가 발생할 수 있음</strong>
-
-<p class="footer-title">
-준법심의필  I3715-26-4758 (2026.09.07 ~ 2027.09.06)</p>
+</p>
+      <p class="legal-junbup">준법심의필  I3715-26-4758 (2026.09.07 ~ 2027.09.06)</p>
     </div>
   </footer>
 
