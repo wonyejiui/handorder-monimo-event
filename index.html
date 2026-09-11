@@ -260,8 +260,7 @@
       padding: 4px 0;
     }
 
-    .store-name { font-size: 18px; font-weight: 600; color: var(--gray-900); letter-spacing: -0.45px; line-height: 1.4; }
-
+.store-name { font-size: 18px; font-weight: 600; color: var(--gray-900); letter-spacing: -0.45px; line-height: 1.4; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .store-address-row { display: flex; align-items: center; gap: 2px; width: 100%; }
 
     .store-address {
@@ -476,6 +475,7 @@
           </div>
         </div>
         <div class="divider"></div>
+        
           <div class="store-thumb"><img src="img-05-korumo-hotel.png" alt="코루모리 코리아" /></div>
           <div class="store-info">
             <p class="store-name">코루모리 코리아</p>
